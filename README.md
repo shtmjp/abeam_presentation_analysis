@@ -2,13 +2,14 @@
 
 ## Description
 [WINGS-FMSP](https://www.ms.u-tokyo.ac.jp/wings-fmsp/)プログラムにおける
-2024年度社会数理実践研究にて、ABeam Consulting社より課題/データ提供をいただき,
+2024年度社会数理実践研究にて、ABeam Consulting社より課題/データ提供をいただき、
 以下の分析を実行しました。
 
 - ABeam Consulting社の社員の方々のプレゼンテーション動画から音声特徴量を抽出し、
 どのような特徴がプレゼンの上手さに寄与するのかをロジスティック回帰により分析しました。
 - Separationの問題に対処するため、Firthの方法によるペナルティ付き最尤法でパラメータを推定しています。
 - 詳細は近日中に[数理科学実践研究レター](https://www.ms.u-tokyo.ac.jp/lmsr/)に掲載される予定です。
+- `praat-parselmouth`や`rpy2`などのGPL-v2+ライセンスのライブラリを含むため、本プロジェクトもGPL-v3ライセンスの下で公開しています。
 
 ## Notebooks
 ### notebooks/preprocess.ipynb
@@ -36,11 +37,12 @@ Rの`logistf`パッケージは、"A solution to the problem of separation in lo
 
 
 ## Description(EN)
-As part of the [WINGS-FMSP](https://www.ms.u-tokyo.ac.jp/wings-fmsp/) program for Practical Social Mathematics Research in 2024, we received tasks and data from ABeam Consulting.
+As part of the [WINGS-FMSP](https://www.ms.u-tokyo.ac.jp/wings-fmsp/) program of Practical Social Mathematics Research in 2024, we received tasks and data from ABeam Consulting, and conducted the following analysis:
 
 - We extracted audio features from presentation videos of ABeam Consulting employees and analyzed which features contribute to presentation quality using logistic regression.
 - To address the problem of separation, we estimated the parameters using the penalized maximum likelihood method with Firth's correction.
 - More details will be published soon in the [Practical Mathematical Science Research Letter](https://www.ms.u-tokyo.ac.jp/lmsr/).
+- Since libraries such as `praat-parselmouth` and `rpy2` are licensed under GPL-v3, this project is also released under the GPL-v3 license.
 
 ## Notebooks(EN)
 ### notebooks/preprocess.ipynb
