@@ -8,8 +8,9 @@ import pandas as pd
 import parselmouth
 import stable_whisper
 import torch
-from fugashi import Tagger  # type: ignore[attr-defined]
 from stable_whisper import WhisperResult
+
+from fugashi_utils import get_yomi
 
 if TYPE_CHECKING:
     from logging import Logger
@@ -17,33 +18,6 @@ if TYPE_CHECKING:
 
     from torch.jit import ScriptModule
     from whisper import Whisper
-
-
-def fugashi_verbose_to_df(s: str) -> pd.DataFrame:
-    """Convert fugashi verbose output to DataFrame."""
-    # description of columns can be found in lib/site-packages/unidic/dicdir/dicrc
-    tagger = Tagger("-Overbose")
-    f = tagger.parse(s)
-    dict_lines = []
-    for line in f.splitlines()[:-1]:  # avoid the last EOS line
-        d = {}
-        for feat_str in line.split("\t"):
-            if feat_str == "":
-                continue
-            feat_name, value = feat_str.split(":")
-            d[feat_name] = value
-        dict_lines.append(d)
-    return pd.DataFrame(dict_lines)
-
-
-def get_yomi(txt: str) -> str:
-    """Get yomi from text."""
-    fuga_df = fugashi_verbose_to_df(txt)
-    try:
-        prons = fuga_df["pron"].fillna(fuga_df["surface"]).to_list()
-    except KeyError:
-        prons = fuga_df["surface"].to_list()
-    return "".join(prons)
 
 
 class ModelContainer:
@@ -83,7 +57,7 @@ class Presentation:
     wav_path : Path
         Path to the WAV file.
     name : str
-        Name of the presentation.
+        Name of the presentor.
     number : int
         Number identifier for the presentation.
     sample_rate : int
@@ -96,7 +70,7 @@ class Presentation:
         List of active intervals in the audio.
     formants_df : pd.DataFrame
         DataFrame containing formant information.
-    whisper_result : object
+    whisper_result : WhisperResult
         Result of the whisper transcription.
     yomi : str
         Yomi transcription of the text.
@@ -279,10 +253,10 @@ class FeatureHandler:
     ) -> dict:
         """Calculate formant stability rates.
 
-        今回は1フレーム0.00625秒 = 6.25ms
+        1フレーム0.00625秒 = 6.25msの場合を考える.
         Luzardo et al. では20ms x 6frameでフォルマントの標準偏差を計算
-        120 / 6.25 = 19.2 frameより, 19frameがデフォルト値
-        threshもLuzardo et al. と同じ100をデフォルト値としている
+        120 / 6.25 = 19.2 frameより, 19frameをデフォルト値としている.
+        threshもLuzardo et al. と同じ100をデフォルト値としている.
 
         Args:
         ----

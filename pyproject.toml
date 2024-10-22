@@ -33,6 +33,7 @@ dependencies = [
     "seaborn>=0.13.2",
     "rpy2>=3.5.16",
     "pandera>=0.20.4",
+    "joblib>=1.4.2",
 ]
 
 [tool.uv]
