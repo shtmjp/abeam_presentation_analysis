@@ -39,6 +39,7 @@ dependencies = [
 [tool.uv]
 dev-dependencies = [
     "ipywidgets>=8.1.5",
+    "pip-licenses>=5.0.0",
     "pre-commit>=4.0.0",
     "pyright>=1.1.383",
     "pytest>=8.3.3",
