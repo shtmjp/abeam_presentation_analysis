@@ -23,7 +23,7 @@ Pythonの`firthlogist`パッケージの実装を利用しています。
 
 ### notebooks/logistic_firth_r.ipynb
 Pythonの `firthlogist`パッケージの信頼性を確認するために、Rの`logistf`パッケージを用いて同様の分析を行い、整合性を確認しています。
-Rの`logistf`パッケージは、"A solution to the problem of separation in logistic regression" [(DOI)](<doi:10.1002/sim.1047>)の著者であるG. Heinze氏により開発されているようです。
+Rの`logistf`パッケージは、"A solution to the problem of separation in logistic regression" [(DOI)](doi:10.1002/sim.1047)の著者であるG. Heinze氏により開発されているようです。
 
 ### notebooks/sim_estimation.ipynb
 シミュレーションにより、実データに近い設定でFirthの方法がうまく機能することを調べています。
