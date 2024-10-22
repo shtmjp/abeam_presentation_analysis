@@ -2,7 +2,8 @@
 
 ## Description
 [WINGS-FMSP](https://www.ms.u-tokyo.ac.jp/wings-fmsp/)プログラムにおける
-2024年度社会数理実践研究にて、ABeam Consulting社より課題/データ提供をいただきました。
+2024年度社会数理実践研究にて、ABeam Consulting社より課題/データ提供をいただき,
+以下の分析を実行しました。
 
 - ABeam Consulting社の社員の方々のプレゼンテーション動画から音声特徴量を抽出し、
 どのような特徴がプレゼンの上手さに寄与するのかをロジスティック回帰により分析しました。
