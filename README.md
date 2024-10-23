@@ -24,7 +24,7 @@ Pythonの`firthlogist`パッケージの実装を利用しています。
 
 ### notebooks/logistic_firth_r.ipynb
 Pythonの `firthlogist`パッケージの信頼性を確認するために、Rの`logistf`パッケージを用いて同様の分析を行い、整合性を確認しています。
-Rの`logistf`パッケージは、"A solution to the problem of separation in logistic regression" [(DOI)](doi:10.1002/sim.1047)の著者であるG. Heinze氏により開発されているようです。
+Rの`logistf`パッケージは、"A solution to the problem of separation in logistic regression" (<https://doi.org/10.1002/sim.1047>) の著者であるG. Heinze氏により開発されているようです。
 
 ### notebooks/sim_estimation.ipynb
 シミュレーションにより、実データに近い設定でFirthの方法がうまく機能することを調べています。
@@ -55,7 +55,7 @@ This notebook calculates various features from the preprocessed presentation dat
 This notebook runs logistic regression using Firth's method based on the processed dataset. It utilizes the `firthlogist` package in Python.
 
 ### notebooks/logistic_firth_r.ipynb
-To verify the reliability of the Python `firthlogist` package, we performed the same analysis using the `logistf` package in R and confirmed the consistency. The `logistf` package in R was developed by G. Heinze, the author of "A solution to the problem of separation in logistic regression" [(DOI)](<doi:10.1002/sim.1047>).
+To verify the reliability of the Python `firthlogist` package, we performed the same analysis using the `logistf` package in R and confirmed the consistency. The `logistf` package in R was developed by G. Heinze, the author of "A solution to the problem of separation in logistic regression" (<https://doi.org/10.1002/sim.1047>).
 
 ### notebooks/sim_estimation.ipynb
 This notebook explores the effectiveness of Firth's method in a setting close to real data through simulations.
